@@ -10,7 +10,7 @@
   Books
 </head>
 <body>
-<table class="table">
+<table id="book-table" class="table">
   <thead>
     <tr>
       <th scope="col"></th>
@@ -92,4 +92,9 @@
   
   
 </form>
+/* Scripts from http://tristen.ca/tablesort/demo/ */
+<script src="js/tablesort.min.js"></script>
+<script>
+  new Tablesort(document.getElementById('book-table'));
+</script>
 </body>
