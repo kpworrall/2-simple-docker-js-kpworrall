@@ -8,7 +8,7 @@ body {
 }
 
 link {
-      color: hotpink:
+      color: hotpink;
 }
 #new {
 background-color: blue;
@@ -16,7 +16,7 @@ color: white;
 }
 
 .home {
-  background-color: yellow:
+  background-color: yellow;
   color: green;
 }
 /*tablesort from http://tristen.ca/tablesort/demo/*/
