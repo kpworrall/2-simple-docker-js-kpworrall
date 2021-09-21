@@ -15,6 +15,7 @@
   <p><small> Photo from SELFMagazine via Creative Commons</small></p>
 <p> Name: {{ person.name.first }} {{ person.name.last }} </p>
 <p> Country: {{ person.location }} </p>
+<p>{{person.name.first }}</p>
 <p> Birthdate: {{ prettyBirthday }} </p>
 <p> Age: {{ person.dob.age }} </p>
 <p> Email Address: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
