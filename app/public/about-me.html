@@ -9,11 +9,14 @@
   About Me
 </head>
 <body>
-<a href = "https://live.staticflickr.com/65535/48546099182_4fa8c496bd_b.jpg"> <img src="img/Profile-picture.jpg" class="img-thumbnail" alt="profile image"> </a>
+  
+<a>  {{ picture.thumbnail }} <a/>
   <p><small> Photo from SELFMagazine via Creative Commons</small></p>
-<p> Name: Roman Zavala </p>
-<p> Country: USA </p>
-<p> Birthdate: 04/13/1983 </p>
-<p> Age: 38 </p>
-<p> Email Address: <a href="mailto:" class="link-primary">rzavala@gmail.com</a></p>
+<p> Name: {{ person.name.first }} {{ person.name.last }} </p>
+<p> Country: {{ person.location }} </p>
+<p> Birthdate: {{ prettyBirthday }} </p>
+<p> Age: {{ person.dob.age }} </p>
+<p> Email Address: <a v-bind:href="'mailto:'+person.email">{ {person.email }}</a></p>
   </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="js/index.js"></script>
