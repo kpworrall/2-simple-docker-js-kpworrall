@@ -21,9 +21,9 @@
  <div id="ProfileApp"> 
 <a>   </a>
   <p><small> Photo from SELFMagazine via Creative Commons</small></p>
+  <img v-bind:src="person.picture.thumbnail">
 <p> Name: {{ person.name.first }} {{ person.name.last }} </p>
-<p> Country: {{ person.location }} </p>
-
+<p> Country: {{ person.location.country }} </p>
 <p> Birthdate: {{ prettyBirthday }} </p>
 <p> Age: {{ person.dob.age }} </p>
 <p> Email Address: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
