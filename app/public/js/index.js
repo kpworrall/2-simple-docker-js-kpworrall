@@ -1,7 +1,7 @@
 //his code is taken from in class exercises
 const profile = {
     data() {
-    return {"person":{},
+    return {"person": undefined,
     }
 },
 
