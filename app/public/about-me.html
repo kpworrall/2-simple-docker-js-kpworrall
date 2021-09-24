@@ -18,6 +18,8 @@
   About Me
 </head>
 <body>
+  <div v-on:submit.prevent="fetchUserData">
+    <button type="submit">Reload</button>
  <div id="ProfileApp" v-if="person"> 
 <a>   </a>
  
@@ -27,6 +29,7 @@
 <p> Birthdate: {{ prettyBirthday }} </p>
 <p> Age: {{ person.dob.age }} </p>
 <p> Email Address: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
+</div>
 </div>
   </body>
 
