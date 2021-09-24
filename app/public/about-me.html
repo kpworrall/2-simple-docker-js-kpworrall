@@ -18,8 +18,9 @@
   About Me
 </head>
 <body>
-  <div v-on:submit.prevent="fetchUserData">
+  <form v-on:submit.prevent="fetchUserData">
     <button type="submit">Reload</button>
+  </form>
  <div id="ProfileApp" v-if="person"> 
 <a>   </a>
  
@@ -30,7 +31,7 @@
 <p> Age: {{ person.dob.age }} </p>
 <p> Email Address: <a v-bind:href="'mailto:'+person.email">{{ person.email }}</a></p>
 </div>
-</div>
+
   </body>
 
   <script src="https://unpkg.com/vue@next"></script>
