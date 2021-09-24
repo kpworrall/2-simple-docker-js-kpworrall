@@ -1,10 +1,11 @@
-head {
-	background-color: red;
-	color: white;
+h1{
+	background-color: lightgray;
+	color: hotpink;
+	text-align: center;
   } 
 body {
-  background-color: lightgrey;
-  color: red;
+  background-color: white;
+  color: blueviolet;
 }
 
 link {
