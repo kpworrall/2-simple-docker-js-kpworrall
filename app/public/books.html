@@ -14,7 +14,7 @@
 <table id="book-table" class="table">
   <thead>
     <tr>
-      <th scope="col"></th>
+      
       <th scope="col">Title</th>
       <th scope="col">Author(s)</th>
       <th scope="col">Year Published</th>
@@ -24,42 +24,14 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Britt-Marie Was Here: A Novel</td>
-      <td>Fredrik Backman</td>
-      <td>2017</td>
-      <td>Washington Square Press</td>
-      <td>336</td>
-      <td>$17.00</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Northern Lights</td>
-      <td>Philip Pullman</td>
-      <td>1995</td>
-      <td>Scholastic</td>
-      <td>399</td>
-      <td>$16.00</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Crooked House</td>
-      <td>Agatha Christie</td>
-      <td>1949</td>
-      <td>Harper Collins</td>
-      <td>256</td>
-      <td>$14.99</td>
-    </tr>    
-    <tr id="new">
-      <th scope="row">4</th>
-      <td>The Book of Three</td>
-      <td>Lloyd Alexander</td>
-      <td>2006</td>
-      <td>Square Fish</td>
-      <td>190</td>
-      <td>$7.99</td>
-    </tr>
+    <tr v-for="book in books">
+      <td>{{ books.title }}</td>
+      <td>{{ books.author }}</td>
+      <td>{{ books.publish_year }}</td>
+      <td>{{ books.publisher }}</td>
+      <td>{{ books.page_count }}</td>
+      <td>{{ prettyDollar(books.msrp) }}</td>
+  </tr>
   </tbody>
 </table>
 <br>
@@ -99,3 +71,5 @@
   new Tablesort(document.getElementById('book-table'));
 </script>
 </body>
+<script src="https://unpkg.com/vue@next"></script>
+

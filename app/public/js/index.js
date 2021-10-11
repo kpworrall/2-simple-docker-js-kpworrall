@@ -1,7 +1,9 @@
 //his code is taken from in class exercises
 const profile = {
     data() {
-    return {"person": undefined,
+    return {
+        "person": undefined,
+        "book" : undefined
     }
 },
 
@@ -25,8 +27,29 @@ const profile = {
             })
 
             
+        },
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        },
+        fetchBookData() {
+          
+            fetch('/api/book/?book_id=' + b.id)
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                
+                this.books = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
+            .catch( (error) => {
+                console.error(error);
+            });
+
         }
     },
+    
     created() {
         this.fetchUserData();
     }
