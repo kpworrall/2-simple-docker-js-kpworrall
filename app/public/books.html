@@ -25,12 +25,12 @@
   </thead>
   <tbody>
     <tr v-for="book in books">
-      <td>{{ books.title }}</td>
-      <td>{{ books.author }}</td>
-      <td>{{ books.publish_year }}</td>
-      <td>{{ books.publisher }}</td>
-      <td>{{ books.page_count }}</td>
-      <td>{{ prettyDollar(books.msrp) }}</td>
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.publish_year }}</td>
+      <td>{{ book.publisher }}</td>
+      <td>{{ book.page_count }}</td>
+      <td>{{ prettyDollar(book.msrp) }}</td>
   </tr>
   </tbody>
 </table>
