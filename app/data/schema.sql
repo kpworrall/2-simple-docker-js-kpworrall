@@ -5,7 +5,7 @@ create table if not exists BOOKS (
 book_id int primary key,
 title varchar(255),
 author varchar(255),
-publish_year  double(4),
+publish_year  int(4),
 publisher varchar(255),
 page_count int,
 msrp DECIMAL(13,2)

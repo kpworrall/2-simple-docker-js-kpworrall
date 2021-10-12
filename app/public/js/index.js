@@ -3,7 +3,7 @@ const profile = {
     data() {
     return {
         "person": undefined,
-        "book" : undefined
+        "books" : undefined
     }
 },
 
@@ -14,44 +14,30 @@ const profile = {
         }
     },
     methods: {
-        fetchUserData() {
-            fetch('https://randomuser.me/api/')
-            .then(response => response.json())
-            .then((parsedJson) => {
-                console.log(parsedJson);
-                this.person = parsedJson.results[0]
-               
-            })
-            .catch( err => {
-                console.error(err)
-            })
-
-            
-        },
+       
         prettyDollar(n) {
             const d = new Intl.NumberFormat("en-US").format(n);
             return "$ " + d;
         },
-        fetchBookData() {
-          
-            fetch('/api/book/?book_id=' + b.id)
-            .then( response => response.json() )
-            .then( (responseJson) => {
-                
-                this.books = responseJson;
+        fetchBooksData(s) {
+            console.log("Fetching books for", b);
+            fetch('/api/books/?book=' + b.id)
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.offers = parsedJson
             })
-            .catch( (err) => {
-                console.error(err);
+            .catch( err => {
+                console.error(err)
             })
-            .catch( (error) => {
-                console.error(error);
-            });
+        
+    },
 
-        }
+        
     },
     
     created() {
-        this.fetchUserData();
+        this.fetchBooksData();
     }
   }
   
