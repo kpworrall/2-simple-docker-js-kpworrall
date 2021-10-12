@@ -2,8 +2,8 @@
 const profile = {
     data() {
     return {
-        "person": undefined,
-        "books" : undefined
+        "person": [],
+        "books" : []
     }
 },
 
@@ -19,19 +19,17 @@ const profile = {
             const d = new Intl.NumberFormat("en-US").format(n);
             return "$ " + d;
         },
-        fetchBooksData(s) {
-            console.log("Fetching books for", b);
-            fetch('/api/books/?book=' + b.id)
-            .then(response => response.json())
-            .then((parsedJson) => {
-                console.log(parsedJson);
-                this.offers = parsedJson
+        fetchBooksData() {
+            fetch('/api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
             })
-            .catch( err => {
-                console.error(err)
+            .catch( (err) => {
+                console.error(err);
             })
-        
-    },
+        },
 
         
     },
