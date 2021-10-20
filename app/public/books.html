@@ -42,35 +42,33 @@
 </table>
 
 <br>
-<form>
-    <div>
-    <label for="Title" class="form-label">Title</label>
-    <input type="text" class="form-control" id="Title">
+<form v-on:submit.prevent="postNewBook">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" v-model="bookForm.title"
+     class="form-control" id="title">
   </div>
-  <div>
-    <label for="Author" class="form-label">Author(s)</label>
-    <input type="text" class="form-control" id="Author">
+  <div class="mb-3">
+    <label for="author" class="form-label">Author</label>
+    <input type="text" v-model="bookForm.author" class="form-control" id="author">
   </div>
-  <div>
-    <label for="Year" class="form-label">Year Published</label>
-    <input type="number" class="form-control" id="Year">
+  <div class="mb-3">
+    <label for="publish_year" class="form-label">Year Published</label>
+    <input type="number" v-model="bookForm.publish_year" class="form-control" id="publish_year">
   </div>
-  <div>
-    <label for="Publisher" class="form-label">Publisher</label>
-    <input type="text" class="form-control" id="Publisher">
+  <div class="mb-3">
+    <label for="publisher" class="form-label">Publisher</label>
+    <input type="text" v-model="bookForm.publisher" class="form-control" id="publisher">
   </div>
-  <div>
-    <label for="Page Count" class="form-label">Page Count</label>
-    <input type="number" class="form-control" id="Page Count">
+  <div class="mb-3">
+    <label for="page_count" class="form-label">Page Count</label>
+    <input type="number" v-model="bookForm.page_count" class="form-control" id="page_count">
   </div>
-    <div>
-    <label for="MSRP" class="form-label">MSRP</label>
-    <input type="text" class="form-control" id="MSRP">
+  <div class="mb-3">
+    <label for="msrp" class="form-label">MSRP</label>
+    <input type="number" v-model="bookForm.msrp" class="form-control" id="msrp">
   </div>
-  
-  
-  
-  
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 <script src="js/index.js"></script>
