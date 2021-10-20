@@ -3,7 +3,9 @@ const profile = {
     data() {
     return {
         "person": [],
-        "books" : []
+        "selectedBook" : null,
+        "books" : [],
+        "bookForm" : {},
     }
 },
 
@@ -19,23 +21,53 @@ const profile = {
             const d = new Intl.NumberFormat("en-US").format(n);
             return "$ " + d;
         },
-        fetchBooksData() {
+        selectBook(b) {
+            if (b == this.selectedBook) {
+                return;
+            }
+            this.selectedBook = s;
+            this.books = [];
+            this.fetchBookData(this.selectedBook);
+        },
+
+        fetchBookData() {
             fetch('/api/books/')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);
-                this.books = responseJson;
+                this.students = responseJson;
             })
             .catch( (err) => {
                 console.error(err);
             })
         },
+        postNewBook(evt) {
+          this.bookForm.book_id = this.selectedBook.id;        
+          
+          console.log("Posting!", this.bookForm);
+  
+          fetch('api/books/create.php', {
+              method:'POST',
+              body: JSON.stringify(this.bookForm),
+              headers: {
+                "Content-Type": "application/json; charset=utf-8"
+              }
+            })
+            .then( response => response.json() )
+            .then( json => {
+              console.log("Returned from post:", json);
+              // TODO: test a result was returned!
+              this.books = json;
+              
+              // reset the form
+              this.bookForm = {};
+            });
+        }
 
-        
     },
     
     created() {
-        this.fetchBooksData();
+        this.fetchBookData();
     }
   }
   
