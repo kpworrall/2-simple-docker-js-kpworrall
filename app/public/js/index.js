@@ -3,7 +3,8 @@ const profile = {
     return {
         "person": [],
         "books" : [],
-        "selectedBook" : []
+        "selectedBook" : [],
+        "bookForm" : []
     }
 },
 
@@ -41,26 +42,25 @@ const profile = {
 
         
     
-    postNewBook(evt) {
-        this.bookForm.book_id = this.selectedBook.id;        
-        
-        console.log("Posting!", this.bookForm);
 
-        fetch('api/books/create.php', {
-            method:'POST',
-            body: JSON.stringify(this.bookForm),
-            headers: {
-              "Content-Type": "application/json; charset=utf-8"
-            }
-          })
-          .then( response => response.json() )
-          .then( json => {
+
+        postNewBook(evt) {
+  
+            console.log("Posting!", this.bookForm);
+            fetch('/api/books/create.php',
+            {
+                method:'POST',
+                body: JSON.stringify(this.bookForm)
+              })
+
+              .then( response => response.json() )
+              .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
             this.books = json;
-            
-            // reset the form
-            this.bookForm = {};
+                
+                // reset the form
+                this.bookForm = {};
           });
       
   }

@@ -36,7 +36,7 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['book_id'],
+  $_POST['book_id']
   $_POST['title'],
   $_POST['author'],
   $_POST['publish_year'],
@@ -53,4 +53,5 @@ $stmt->execute([
 // Here, instead of giving output, I'm redirecting to the SELECT API,
 // just in case the data changed by entering it
 header('HTTP/1.1 303 See Other');
-header('Location: ../books/');
+header('Location: ../books/?book='.$_POST['book_id']);
+
