@@ -1,10 +1,10 @@
 const profile = {
     data() {
     return {
-        "person": [],
-        "books" : [],
-        "selectedBook" : [],
-        "bookForm" : []
+        person: [],
+        books : [],
+        selectedBook : null,
+        bookForm : {}
     }
 },
 
@@ -47,11 +47,15 @@ const profile = {
         postNewBook(evt) {
   
             console.log("Posting!", this.bookForm);
-            fetch('/api/books/create.php',
+            fetch('api/books/create.php',
             {
                 method:'POST',
-                body: JSON.stringify(this.bookForm)
+                body: JSON.stringify(this.bookForm),
+                headers: {
+                    "Content-Type" : "application/json: charset=utf-8"
+                }
               })
+               
 
               .then( response => response.json() )
               .then( json => {
