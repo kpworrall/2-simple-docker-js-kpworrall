@@ -72,9 +72,7 @@
     <label for="msrp" class="form-label">MSRP</label>
     <input type="number" v-model="bookForm.msrp" class="form-control" id="msrp">
   </div>
- <div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</div>
+
 <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
               <button type="button" class="btn btn-outline-secondary" 
                  v-if="selectedBook"
