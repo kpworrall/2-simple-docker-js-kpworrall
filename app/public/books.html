@@ -75,6 +75,10 @@
  <div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </div>
+<button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Add " : "Edit " }} Book</button>
+              <button type="button" class="btn btn-outline-secondary" 
+                 v-if="selectedBook"
+                 v-on:click="handleResetEdit">Cancel Edit</button>
 </form>
 </div>
 <script src="js/index.js"></script>
