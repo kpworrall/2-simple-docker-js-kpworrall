@@ -56,7 +56,7 @@ const profile = {
 
         postEditBook(evt) {
             this.bookForm.id = this.selectedBook.id;
-            this.Form.book_id = this.selectedBook.id;        
+            this.Form.id = this.selectedBook.id;        
             
             console.log("Editing!", this.bookForm);
     

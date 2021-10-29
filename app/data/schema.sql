@@ -2,7 +2,7 @@ Create database if not exists homework;
 use homework;
 
 create table if not exists BOOKS (
-book_id int primary key,
+id int primary key,
 title varchar(255),
 author varchar(255),
 publish_year  int(4),
