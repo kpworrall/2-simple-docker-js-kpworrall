@@ -29,6 +29,14 @@ const profile = {
 
             
         },
+        postBook(evt) {
+            console.log ("Test:", this.selectedBook);
+          if (this.selectedBook) {
+              this.postEditBook(evt);
+          } else {
+              this.postNewBook(evt);
+          }
+        },
        
         prettyDollar(n) {
             const d = new Intl.NumberFormat("en-US").format(n);
