@@ -31,7 +31,7 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'UPDATE books SET 
+  'UPDATE BOOKS SET 
     title = ?,
     author = ?,
     publish_year = ?,
@@ -44,7 +44,7 @@ $stmt = $db->prepare(
 $stmt->execute([
   $_POST['title'],
   $_POST['author'],
-  $_POST['publisr_year'],
+  $_POST['publish_year'],
   $_POST['publisher'],
   $_POST['page_count'],
   $_POST['msrp'],

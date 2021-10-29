@@ -72,7 +72,7 @@ const profile = {
               .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.offers = json;
+                this.books = json;
                 
                 // reset the form
                 this.handleResetEdit();
@@ -101,7 +101,7 @@ const profile = {
             this.books = json;
                 
                 // reset the form
-                this.bookForm = {};
+                this.handleResetEdit = {};
           });
       
   },
@@ -145,8 +145,7 @@ const profile = {
   } else {
       this.postNewBook(evt);
   }
-
-  }
+}
 },
     
     created() {
