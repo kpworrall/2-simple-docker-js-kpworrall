@@ -37,19 +37,19 @@ $stmt = $db->prepare(
     publish_year = ?,
     publisher = ?,
     page_count = ?,
-    msrp = ?
+    msrp =?
   WHERE id = ?'
 );
 
 $stmt->execute([
- $_POST['title'],
- $_POST['author'],
- $_POST['publish_year'],
- $_POST['publisher'],
- $_POST['page_count'],
- $_POST['msrp']
+  $_POST['title'],
+  $_POST['author'],
+  $_POST['publisr_year'],
+  $_POST['publisher'],
+  $_POST['page_count'],
+  $_POST['msrp'],
+  $_POST['id']
 ]);
-
 // Get auto-generated PK from DB
 // https://www.php.net/manual/en/pdo.lastinsertid.php
 // $pk = $db->lastInsertId();  

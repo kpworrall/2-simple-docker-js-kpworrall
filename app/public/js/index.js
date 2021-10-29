@@ -56,7 +56,7 @@ const profile = {
 
         postEditBook(evt) {
             this.bookForm.id = this.selectedBook.id;
-            this.Form.id = this.selectedBook.id;        
+      
             
             console.log("Editing!", this.bookForm);
     
@@ -71,7 +71,7 @@ const profile = {
               .then( json => {
                 console.log("Returned from post:", json);
                 // TODO: test a result was returned!
-                this.books = json;
+                this.offers = json;
                 
                 // reset the form
                 this.handleResetEdit();
@@ -128,10 +128,11 @@ const profile = {
         this.handleResetEdit();
       });
   },
-  handleEditBook(book) {
-      this.selectedBook = book;
-      this.bookForm = Object.assign({}, this.selectedBook);
-  },
+  handleEditOffer(book) {
+    this.selectedBook = book;
+    this.bookForm = Object.assign({}, this.selectedBook);
+},
+
   handleResetEdit() {
       this.selectedBook = null;
       this.bookForm = {};
