@@ -15,6 +15,20 @@ const profile = {
         }
     },
     methods: {
+        fetchUserData() {
+            fetch('https://randomuser.me/api/')
+            .then(response => response.json())
+            .then((parsedJson) => {
+                console.log(parsedJson);
+                this.person = parsedJson.results[0]
+               
+            })
+            .catch( err => {
+                console.error(err)
+            })
+
+            
+        },
        
         prettyDollar(n) {
             const d = new Intl.NumberFormat("en-US").format(n);
@@ -127,6 +141,7 @@ const profile = {
     
     created() {
         this.fetchBooksData();
+        this.fetchUserData();
     }
   }
   
