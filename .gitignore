@@ -1,5 +1,2 @@
 .DS_Store
-MYSQL_DATABASE=msis-work
-MYSQL_HOST=msis-work.cdutvsf63o2u.us-east-2.rds.amazonaws.com
-MYSQL_USER=msisadmin
-MYSQL_PASSWORD=
+env
