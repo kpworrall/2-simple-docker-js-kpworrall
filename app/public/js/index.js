@@ -29,14 +29,7 @@ const profile = {
 
             
         },
-        postBook(evt) {
-            console.log ("Test:", this.selectedBook);
-          if (this.selectedBook) {
-              this.postEditBook(evt);
-          } else {
-              this.postNewBook(evt);
-          }
-        },
+
        
         prettyDollar(n) {
             const d = new Intl.NumberFormat("en-US").format(n);
@@ -136,7 +129,7 @@ const profile = {
         this.handleResetEdit();
       });
   },
-  handleEditOffer(book) {
+  handleEditBook(book) {
     this.selectedBook = book;
     this.bookForm = Object.assign({}, this.selectedBook);
 },
@@ -144,8 +137,16 @@ const profile = {
   handleResetEdit() {
       this.selectedBook = null;
       this.bookForm = {};
+  },
+  postBook(evt) {
+    console.log ("Test:", this.selectedBook);
+  if (this.selectedBook) {
+      this.postEditBook(evt);
+  } else {
+      this.postNewBook(evt);
   }
 
+  }
 },
     
     created() {
